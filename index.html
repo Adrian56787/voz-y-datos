@@ -1,0 +1,732 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Guía de Telefonía</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: índice fijo a la izquierda, contenido en una columna de lectura; en móvil el índice pasa a barra superior deslizable.
+   Tokens: papel azulado, tinta oscura, acento azul petróleo; rojo y verde de cable solo aparecen en los esquemas de conectores. */
+:root{
+  --bg:#FFFFFF; --surface:#FFFFFF; --surface2:#EEF3F7; --ink:#0A141C; --muted:#34444F; --line:#7F90A0; --soft-line:#C5D0D9;
+  --accent:#08506B; --accent-ink:#FFFFFF; --accent-soft:#DDEEF5;
+  --head:#0B3A4F;
+  --good:#0F6B38; --good-soft:#D8F2E2; --bad:#A3190F; --bad-soft:#FADBD8;
+  --cable-red:#D12B2B; --cable-green:#2FA84F; --cable-black:#1A1A1A; --cable-yellow:#F2C21B; --cable-orange:#F28A1B; --cable-blue:#2D5DD0; --cable-brown:#7A4B26; --cable-white:#F4F4F4; --cable-olive:#7C7A1E;
+  --font-display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --font-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.6;
+  padding-block:0;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+button{font:inherit;color:inherit}
+
+.shell{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:250px minmax(0,1fr);gap:40px;padding-block:28px 64px}
+.side{position:sticky;top:calc(env(safe-area-inset-top,0px) + 20px);align-self:start;max-height:calc(100vh - 40px);overflow:auto}
+.brand{font-family:var(--font-display);font-weight:800;font-size:2rem;line-height:.95;letter-spacing:.01em;text-transform:uppercase;margin:0 0 4px}
+.brand small{display:block;font-family:var(--font-mono);font-weight:400;font-size:.72rem;letter-spacing:.08em;color:var(--muted);margin-top:8px}
+.nav{list-style:none;margin:22px 0 0;padding:0;display:flex;flex-direction:column;gap:2px}
+.nav a{display:block;padding:7px 10px;border-radius:6px;text-decoration:none;color:var(--ink);font-size:.93rem}
+.nav a:hover{background:var(--surface2)}
+.nav a.on{background:var(--accent-soft);color:var(--ink);font-weight:600}
+.nav .grp{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:14px 10px 4px}
+.nav .sub a{padding-left:22px;font-size:.88rem;color:var(--muted)}
+.nav .sub a.on{color:var(--ink)}
+.themebtn{margin-top:18px;border:1px solid var(--line);background:var(--surface);border-radius:6px;padding:6px 10px;font-size:.82rem;cursor:pointer}
+
+main{min-width:0}
+.hero{padding-bottom:12px}
+.hero h1{font-family:var(--font-display);font-weight:800;font-size:clamp(2.6rem,7vw,4.6rem);line-height:.92;text-transform:uppercase;margin:0 0 14px;text-wrap:balance}
+.hero p{max-width:60ch;color:var(--muted);margin:0 0 6px;font-size:1.05rem}
+.stats{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:16px;font-family:var(--font-mono);font-size:.82rem;color:var(--muted)}
+.stats b{color:var(--ink);font-weight:500}
+
+section.tema{padding-top:44px}
+.tag{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h2{font-family:var(--font-display);font-weight:800;font-size:clamp(1.9rem,4.5vw,2.8rem);line-height:1;text-transform:uppercase;margin:4px 0 6px;text-wrap:balance}
+h3{font-size:1.12rem;margin:30px 0 10px;font-weight:600;text-wrap:balance}
+h3 .n{font-family:var(--font-mono);font-size:.78rem;color:var(--accent);margin-right:8px;font-weight:500}
+.lead{max-width:62ch;color:var(--muted);margin:0 0 8px}
+p{margin:0 0 12px;max-width:68ch}
+ul.pts{margin:0 0 14px;padding-left:1.2em;max-width:68ch}
+ul.pts li{margin-bottom:6px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:14px 0}
+.box h4{margin:0 0 8px;font-size:.95rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin:14px 0}
+.grid .box{margin:0}
+.key{background:var(--accent-soft);border-radius:8px;padding:12px 14px;margin:14px 0;max-width:68ch;font-size:.96rem}
+.key b{color:var(--ink)}
+.tablewrap{overflow-x:auto;margin:14px 0;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.93rem}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--font-mono);font-weight:500;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--surface2)}
+tr:last-child td{border-bottom:0}
+td.mono,.mono{font-family:var(--font-mono)}
+.pill{display:inline-block;font-family:var(--font-mono);font-size:.78rem;background:var(--surface2);border:1px solid var(--line);border-radius:5px;padding:1px 7px}
+
+/* Conectores */
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
+.tabs button{border:1px solid var(--line);background:var(--surface);border-radius:6px;padding:7px 12px;cursor:pointer;font-family:var(--font-mono);font-size:.82rem}
+.tabs button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.jack{display:flex;gap:6px;align-items:flex-end;padding:16px;background:var(--surface2);border-radius:8px;overflow-x:auto;width:max-content;max-width:100%}
+.slot{width:34px;display:flex;flex-direction:column;align-items:center;gap:6px;flex:none}
+.slot i{display:block;width:100%;height:62px;border-radius:3px;border:1px dashed var(--line);background:transparent}
+.slot i.on{border:1px solid rgba(0,0,0,.35)}
+.slot span{font-family:var(--font-mono);font-size:.72rem;color:var(--muted)}
+.jackcap{margin-top:10px;max-width:68ch}
+.jackcap b{font-family:var(--font-mono);font-weight:500}
+
+/* Fases */
+.stepper{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:14px 0}
+.steps{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.steps button{border:1px solid var(--line);background:var(--surface2);border-radius:6px;padding:6px 10px;cursor:pointer;font-size:.84rem}
+.steps button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.ends{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.end{border:1px solid var(--line);border-radius:8px;padding:12px 14px;min-width:0}
+.end .who{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.end .volt{font-family:var(--font-display);font-weight:800;font-size:2.4rem;line-height:1.05;margin:2px 0}
+.end .sig{font-size:.88rem;color:var(--muted)}
+.stepnote{margin:14px 0 0;max-width:68ch}
+
+/* Teclado DTMF */
+.dtmf{display:grid;grid-template-columns:auto repeat(3,64px);gap:6px;align-items:center;justify-content:start;margin:10px 0}
+.dtmf .h{font-family:var(--font-mono);font-size:.72rem;color:var(--muted);text-align:center}
+.dtmf .r{font-family:var(--font-mono);font-size:.72rem;color:var(--muted);padding-right:8px;text-align:right}
+.dtmf button{height:44px;border:1px solid var(--line);background:var(--surface);border-radius:8px;font-family:var(--font-mono);font-size:1.05rem;cursor:pointer}
+.dtmf button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.dtmfout{min-height:1.6em;font-family:var(--font-mono);margin:6px 0}
+
+/* Esquema instalación */
+.diagram{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px;margin:14px 0;overflow-x:auto}
+.diagram svg{display:block;min-width:520px;width:100%;height:auto}
+.d-line{stroke:var(--ink);stroke-width:2;fill:none}
+.d-box{fill:var(--surface2);stroke:var(--ink);stroke-width:2}
+.d-acc{fill:var(--accent-soft);stroke:var(--accent);stroke-width:2}
+.d-t{fill:var(--ink);font-family:var(--font-body);font-size:13px}
+.d-m{fill:var(--muted);font-family:var(--font-mono);font-size:11px}
+
+/* Test */
+.testbar{position:sticky;top:calc(env(safe-area-inset-top,0px) + 8px);z-index:12;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;margin:14px 0}
+.testbar .score{font-family:var(--font-mono);font-size:.9rem}
+.bar{flex:1 1 140px;height:8px;border-radius:99px;background:var(--surface2);overflow:hidden;min-width:100px}
+.bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .3s}
+.reset{border:1px solid var(--line);background:var(--surface2);border-radius:6px;padding:5px 12px;cursor:pointer;font-size:.85rem}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin:12px 0}
+.q .qn{font-family:var(--font-mono);font-size:.75rem;color:var(--accent);letter-spacing:.08em}
+.q .qt{font-weight:600;margin:2px 0 10px;max-width:64ch}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{text-align:left;border:1px solid var(--line);background:var(--surface2);border-radius:8px;padding:10px 12px;cursor:pointer;display:flex;gap:10px;align-items:flex-start;line-height:1.45}
+.opt .l{font-family:var(--font-mono);font-size:.8rem;color:var(--muted);flex:none;width:1.4em;padding-top:1px}
+.opt:hover:not(:disabled){border-color:var(--accent)}
+.opt:disabled{cursor:default}
+.opt.ok{background:var(--good-soft);border-color:var(--good)}
+.opt.ko{background:var(--bad-soft);border-color:var(--bad)}
+.opt.dim{opacity:.7}
+.exp{margin-top:12px;padding:10px 12px;border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 8px 8px 0;font-size:.92rem;max-width:68ch}
+.exp[hidden]{display:none}
+.final{background:var(--accent-soft);border-radius:10px;padding:14px 18px;margin:14px 0;font-weight:500}
+.note{font-size:.86rem;color:var(--muted);max-width:68ch}
+
+@media (max-width:900px){
+  .shell{grid-template-columns:minmax(0,1fr);gap:0;padding-block:0 56px}
+  .side{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;max-height:none;overflow:visible;background:var(--bg);margin:0 calc(-1 * max(16px,env(safe-area-inset-right,0px))) 0 calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding:8px max(16px,env(safe-area-inset-right,0px)) 8px max(16px,env(safe-area-inset-left,0px));border-bottom:1px solid var(--line)}
+  .brand{display:none}
+  .nav{flex-direction:row;overflow-x:auto;margin:0;gap:6px;padding-bottom:2px}
+  .nav li{flex:none}
+  .nav .grp{display:none}
+  .nav a,.nav .sub a{padding:7px 12px;border:1px solid var(--line);border-radius:99px;white-space:nowrap;font-size:.86rem;color:var(--ink);background:var(--surface)}
+  .nav a.on{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+  .themebtn{display:none}
+  html{scroll-padding-top:70px}
+  .hero{padding-top:22px}
+  .ends{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bar i{transition:none}}
+
+/* ===== Revisión: fondo blanco, apartados marcados, más contraste ===== */
+body{font-size:17px;color:var(--ink)}
+.brand small,.nav .grp,.stats,.note,.lead,.slot span,.dtmf .h,.dtmf .r,.end .who,.end .sig{color:var(--muted)}
+.nav a{color:var(--ink);font-weight:500}
+.nav a.on{background:var(--head);color:#fff}
+.side{border-right:2px solid var(--soft-line);padding-right:20px}
+.hero{border-bottom:3px solid var(--head);padding-bottom:24px}
+section.tema{padding-top:64px}
+.temahead{background:var(--head);color:#fff;border-radius:12px;padding:26px 28px 24px;margin-bottom:8px}
+.temahead .tag{color:#9FD8EC;font-weight:500}
+.temahead h2{color:#fff;margin:6px 0 10px}
+.temahead .lead{color:#E3F1F7;margin:0;max-width:62ch}
+h3{background:var(--accent-soft);border:1.5px solid var(--accent);border-left:8px solid var(--accent);border-radius:0 8px 8px 0;padding:10px 16px;margin:44px 0 16px;font-size:1.18rem;font-weight:700;color:var(--ink)}
+h3 .n{background:var(--accent);color:#fff;border-radius:4px;padding:1px 7px;margin-right:10px;font-size:.8rem}
+p,ul.pts{max-width:70ch}
+.box{background:var(--surface2);border:2px solid var(--line);border-radius:10px;padding:16px 18px}
+.box h4{font-size:1rem;margin:0 0 6px;padding-bottom:6px;border-bottom:2px solid var(--accent);color:var(--ink)}
+.key{background:#FFF7DA;border:2px solid #B58900;border-left:8px solid #B58900;border-radius:8px;color:var(--ink);padding:14px 16px;max-width:none}
+.tablewrap{border:2px solid var(--line);border-radius:10px}
+th{background:var(--head);color:#fff;font-size:.78rem}
+th,td{border-bottom:1.5px solid var(--soft-line)}
+tbody tr:nth-child(even) td{background:#F4F8FA}
+.pill{border-color:var(--line)}
+.tabs button{border:2px solid var(--line);background:#fff;color:var(--ink);font-weight:500}
+.tabs button[aria-pressed="true"]{background:var(--head);border-color:var(--head);color:#fff}
+.jack{background:var(--surface2);border:2px solid var(--line)}
+.slot i{border:2px dashed var(--line)}
+.stepper,.diagram,.q{border:2px solid var(--line);background:#fff}
+.steps button{border:2px solid var(--line);background:#fff;font-weight:500}
+.steps button[aria-pressed="true"]{background:var(--head);border-color:var(--head);color:#fff}
+.end{border:2px solid var(--line);background:var(--surface2)}
+.end .volt{color:var(--accent)}
+.dtmf button{border:2px solid var(--line);background:#fff}
+.dtmf button[aria-pressed="true"]{background:var(--head);border-color:var(--head);color:#fff}
+.d-box{fill:#EEF3F7}.d-acc{fill:#DDEEF5}
+.testbar{background:#fff;border:2px solid var(--head)}
+.bar{background:var(--soft-line)}.bar i{background:var(--good)}
+.reset{border:2px solid var(--line);background:#fff;font-weight:500}
+.q{border-top:6px solid var(--head)}
+.q .qn{color:var(--accent);font-weight:500}
+.q .qt{font-size:1.04rem}
+.opt{border:2px solid var(--line);background:#fff}
+.opt:hover:not(:disabled){border-color:var(--head);background:var(--accent-soft)}
+.opt .l{color:var(--ink);font-weight:500}
+.opt.ok{background:var(--good-soft);border-color:var(--good)}
+.opt.ko{background:var(--bad-soft);border-color:var(--bad)}
+.opt.dim{opacity:.6}
+.exp{background:var(--accent-soft);border:1.5px solid var(--accent);border-left:6px solid var(--accent);color:var(--ink)}
+.final{background:var(--accent-soft);border:2px solid var(--accent)}
+@media (max-width:900px){
+  .side{border-right:0;border-bottom:2px solid var(--soft-line);padding-right:max(16px,env(safe-area-inset-right,0px))}
+  .nav a,.nav .sub a{border:2px solid var(--line);color:var(--ink)}
+  .nav a.on{background:var(--head);color:#fff;border-color:var(--head)}
+  .temahead{padding:20px 18px}
+}
+</style>
+
+<div class="shell">
+  <aside class="side">
+    <p class="brand">Guía de<br>Telefonía<small>TEMAS 1–3 · RESUMEN + TEST</small></p>
+    <ul class="nav" id="nav">
+      <li class="grp">Resumen</li>
+      <li><a href="#tema1">1 · Conectorizado</a></li>
+      <li><a href="#tema2">2 · Interfaces de línea</a></li>
+      <li><a href="#tema3">3 · Instalación interior</a></li>
+      <li class="grp">Cuestiones tipo test</li>
+      <li><a href="#test">Elegir test</a></li>
+    </ul>
+  </aside>
+
+  <main>
+    <header class="hero">
+      <h1>Instalaciones de telefonía</h1>
+      <p>Resumen de los tres temas de prácticas, con los esquemas que hay que saber de memoria, y un test por tema para comprobar lo que has retenido.</p>
+      <div class="stats"><span><b>3</b> temas</span><span><b>40</b> preguntas tipo test</span><span>Respuesta y explicación al instante</span></div>
+    </header>
+
+    <!-- ================= TEMA 1 ================= -->
+    <section class="tema" id="tema1">
+      <div class="temahead"><div class="tag">Tema 1</div>
+      <h2>Conectorizado en telefonía</h2>
+      <p class="lead">Cómo se unen los cables a los conectores, qué conector sirve para qué y cómo se comprueba que un latiguillo está bien hecho.</p></div>
+
+      <h3><span class="n">1.2</span>Los conectores</h3>
+      <p>El conector macho une mecánicamente el cable con roseta, teléfono u otro aparato (que lleva el conector hembra). Tiene cuatro partes:</p>
+      <div class="grid">
+        <div class="box"><h4>Cuerpo plástico</h4>Normalmente transparente.</div>
+        <div class="box"><h4>Contactos</h4>Uñas metálicas que se clavan en el cable y hacen la conexión eléctrica.</div>
+        <div class="box"><h4>Hendidura de fijación</h4>Aprieta la cubierta exterior y da robustez.</div>
+        <div class="box"><h4>Pestaña de anclaje</h4>Sujeta el conector a la roseta.</div>
+      </div>
+      <div class="key"><b>Cómo se nombra (TIA-968A):</b> por sus dimensiones, sus características eléctricas y el número de <b>posiciones</b> (huecos) y de <b>contactos</b> reales. Un <span class="mono">6P4C</span> tiene 6 huecos y solo 4 contactos.</div>
+
+      <div class="tablewrap"><table>
+        <thead><tr><th>Conector</th><th>Uso</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">4P4C</td><td>Conector no normalizado por USOC, llamado popularmente RJ-9. Une el auricular con el cuerpo del teléfono.</td></tr>
+          <tr><td class="mono">6P2C</td><td>6 posiciones, 2 contactos centrales. Teléfono a línea a través de la roseta (<b>RJ-11</b>).</td></tr>
+          <tr><td class="mono">6P4C</td><td>Dos líneas RTB a una centralita (<b>RJ-14</b>); centralita a teléfono específico (RJ-12 y RJ-13); una línea RDSI a una centralita.</td></tr>
+          <tr><td class="mono">6P6C</td><td>Tres líneas RTB a una centralita (<b>RJ-25</b>); centralita a teléfono específico (RJ-18).</td></tr>
+          <tr><td class="mono">8P8C</td><td>Teléfono RDSI a roseta; TR1 a bus pasivo (<b>RJ-48</b>).</td></tr>
+        </tbody></table></div>
+
+      <h3><span class="n">1.2</span>¿Por qué se dice «RJ» a un conector?</h3>
+      <p>En los años 70 la empresa Bell System publicó la normativa USOC, que incluía la <b>Registered Jack (RJ)</b>. Un RJ es una normativa de <b>interfaz</b>: conector más aplicación para la que se usa. Así, RJ-14 identifica la conexión de dos líneas, no solo un conector.</p>
+      <p>En España no hay normalización propia (AENOR y FACEL lo confirmaron). Se usan oficiosamente las normas americanas, y mal aplicadas: es habitual oír RJ-11, RJ-12 y RJ-13 para el mismo conector.</p>
+
+      <h3>Colores por interfaz</h3>
+      <p>Pulsa una interfaz para ver qué posiciones usa y de qué color es cada hilo (códigos de la norma T1.TR5-1999 del ACTA).</p>
+      <div class="tabs" id="jacktabs" role="group" aria-label="Interfaz"></div>
+      <div class="jack" id="jack" aria-live="polite"></div>
+      <p class="jackcap" id="jackcap"></p>
+
+      <h3><span class="n">1.3</span>Cables para latiguillos y cableado interior</h3>
+      <p>Un <b>latiguillo</b> es un cable corto con conectores en los dos extremos (teléfono ↔ roseta). El cable interior se conectoriza solo por un extremo (por ejemplo, repartidor ↔ centralita). Ambos son de 2 a 8 hilos (1 a 4 pares), diámetro de <b>0,50 a 0,52 mm</b>, aislante de polietileno (PE) y cubierta de PVC casi siempre crema.</p>
+      <div class="grid">
+        <div class="box"><h4>Plano</h4>De 4, 6 y 8 vías. Muy útil para latiguillos.</div>
+        <div class="box"><h4>Redondo</h4>De 2, 4, 6 y 8 vías. Se usa poco en latiguillos (la cubierta entra forzada) y mucho en instalaciones, porque pasa mejor por las canalizaciones.</div>
+        <div class="box"><h4>Bifilar y multipar</h4>No se usan para conectorizar: su aislante exterior es pequeño y deja el conector suelto.</div>
+      </div>
+
+      <h3><span class="n">1.4</span>Herramientas</h3>
+      <div class="grid">
+        <div class="box"><h4>Pelacables</h4>Pela el aislante exterior sin dañar el interior. Se mete el cable entre las cuchillas, se ajustan al tamaño del cable, se sujeta con una mano y se gira 360° alrededor.</div>
+        <div class="box"><h4>Tenaza crimpadora</h4>Une el cable al conector. Tiene mango, cuchillas de pelado y de corte, y uno o dos huecos de crimpado.</div>
+      </div>
+      <p><b>Crimpar, paso a paso:</b></p>
+      <ul class="pts">
+        <li>Pelar el cable metiéndolo hasta el tope, apretando el mango y tirando hacia atrás.</li>
+        <li>Cortar el extremo de los hilos con la cuchilla de corte.</li>
+        <li>Meter los hilos en el conector hasta el fondo.</li>
+        <li>Colocar el conector en el hueco de crimpado y apretar: las cuchillas del conector se clavan en el cable.</li>
+      </ul>
+      <div class="key"><b>Dos cuidados:</b> los hilos deben llegar hasta el fondo (si no, las uñas no hacen contacto) y la cubierta del cable debe entrar en la hendidura de fijación; si se pela demasiado, el cable aguanta muy mal los tirones.</div>
+
+      <h3><span class="n">1.5</span>Comprobador de cableado</h3>
+      <p>Tiene dos unidades separables: <b>emisor</b> (genera las tensiones) y <b>receptor</b> (con panel indicador). Cada una lleva hembras 6p6c y 8p8c.</p>
+      <ul class="pts">
+        <li>Conectar un extremo del latiguillo al receptor y el otro al emisor.</li>
+        <li>Pulsar el botón de autocomprobación.</li>
+        <li>Si es correcto se iluminan los 8 leds (o los 2, 4 o 6 centrales si el cable es de 2, 4 o 6 vías).</li>
+        <li>También informa de cortocircuito, cable cruzado, conectado o sin conexión.</li>
+      </ul>
+      <p class="note">Prácticas del tema: 1.1 latiguillo teléfono convencional ↔ roseta (6P2C), 1.2 latiguillo teléfono RDSI ↔ roseta y 1.3 latiguillo RDSI según la norma de datos T-568B (EIA/TIA 568B).</p>
+    </section>
+
+    <!-- ================= TEMA 2 ================= -->
+    <section class="tema" id="tema2">
+      <div class="temahead"><div class="tag">Tema 2</div>
+      <h2>Interfaces de las líneas telefónicas</h2>
+      <p class="lead">Qué tensión, corriente y señal hay en la línea en cada momento de una llamada, y cómo se marca.</p></div>
+
+      <h3><span class="n">2.2</span>Fases de una llamada</h3>
+      <ul class="pts">
+        <li>Ambos teléfonos están en reposo.</li>
+        <li>Descuelga el llamante y recibe el tono de invitación a marcar.</li>
+        <li>El llamante marca, por pulsos o por tonos.</li>
+        <li>El teléfono del llamado recibe la señal de llamada.</li>
+        <li>Si no se puede establecer la comunicación, la central devuelve tonos especiales (comunica, etc.).</li>
+        <li>Si todo va bien, empieza la conversación.</li>
+        <li>Cuelga uno de los dos y se interrumpe la comunicación.</li>
+      </ul>
+
+      <h3><span class="n">2.3</span>Niveles de tensión y corriente</h3>
+      <p>Es la central de conmutación la que genera las tensiones continuas y las señales. Recorre cada etapa para ver qué hay en cada teléfono.</p>
+      <div class="stepper">
+        <div class="steps" id="steps" role="group" aria-label="Etapa de la llamada"></div>
+        <div class="ends">
+          <div class="end"><div class="who">Llamante</div><div class="volt" id="v1"></div><div class="sig" id="s1"></div></div>
+          <div class="end"><div class="who">Llamado</div><div class="volt" id="v2"></div><div class="sig" id="s2"></div></div>
+        </div>
+        <p class="stepnote" id="stepnote"></p>
+      </div>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Dato</th><th>Valor</th></tr></thead>
+        <tbody>
+          <tr><td>Reposo</td><td class="mono">48 V continua nominal (42 a 57 V), consumo menor de 1 mA</td></tr>
+          <tr><td>Al descolgar</td><td class="mono">Corriente mayor de 15 mA a 48 V; la central ve la línea tomada</td></tr>
+          <tr><td>Línea tomada</td><td class="mono">Tensión de 6 a 18 V (típico 10 V) y corriente de 36 a 49,5 mA</td></tr>
+          <tr><td>Tono de invitación a marcar</td><td class="mono">Unos 200 mV de pico, 425 Hz, sobre la continua</td></tr>
+          <tr><td>Señal de llamada</td><td class="mono">Unos 25 Hz y 75 V eficaces sobre los 48 V del llamado</td></tr>
+        </tbody></table></div>
+
+      <h3><span class="n">2.4</span>Marcación por pulsos y por tonos</h3>
+      <div class="grid">
+        <div class="box"><h4>Por pulsos</h4>Al pulsar una tecla se generan tantos pulsos como indique. Un pulso está a nivel bajo 66 ms y a nivel alto 33 ms. Al final se suman 367 ms (el último nivel alto dura 400 ms). Inconveniente: es lenta con números largos.</div>
+        <div class="box"><h4>Por tonos (DTMF)</h4>Cada tecla genera una pareja de señales de distinta frecuencia, que se suman en la línea. Las frecuencias están elegidas para resistir las interferencias.</div>
+      </div>
+      <p>Toca una tecla para ver sus dos frecuencias, según la asignación del libro (Fig. 2.10).</p>
+      <div class="dtmf" id="dtmf"></div>
+      <div class="dtmfout mono" id="dtmfout">Tecla: —</div>
+      <p class="note">Aviso: en el estándar DTMF internacional la fila 1-2-3 es de 697 Hz y la fila 7-8-9 de 852 Hz (la tecla 7 sería 852 + 1209 Hz). El libro asigna las filas al revés. Para el examen usa lo que diga tu libro o tu profesor.</p>
+
+      <h3>Prácticas del tema</h3>
+      <div class="grid">
+        <div class="box"><h4>2.1 Tensiones e intensidades</h4>Voltímetro en paralelo y amperímetro en serie con el teléfono, conectados a una roseta con línea activa, en reposo, descolgado y en conversación.</div>
+        <div class="box"><h4>2.2 Señales con osciloscopio</h4>Medir la señal de llamada y los tonos más simples.</div>
+        <div class="box"><h4>2.3 Dos teléfonos entre sí</h4>Se puede hablar sin central, pero no suenan los timbres de llamada.</div>
+      </div>
+    </section>
+
+    <!-- ================= TEMA 3 ================= -->
+    <section class="tema" id="tema3">
+      <div class="temahead"><div class="tag">Tema 3</div>
+      <h2>Instalaciones interiores básicas de telefonía analógica</h2>
+      <p class="lead">Del PTR a la roseta: qué elementos hay dentro de la vivienda, cómo se cablean y por dónde pasan.</p></div>
+
+      <h3><span class="n">3.2</span>Esquema general</h3>
+      <p>Las instalaciones interiores pueden ser <b>analógicas</b> (RTB o RTC, la señal que viaja entre central y casa es analógica) o <b>digitales</b> (RDSI, de mejor calidad y con más servicios). Esta lección trata las básicas; se pueden complicar con repartidores (instalación flexible, Capítulo 4) o con centralitas privadas PBX (Capítulo 10).</p>
+      <div class="diagram">
+        <svg viewBox="0 0 640 230" role="img" aria-label="PTR conectado por una canalización a tres rosetas en paralelo">
+          <rect class="d-acc" x="20" y="20" width="120" height="56" rx="6"/>
+          <text class="d-t" x="80" y="45" text-anchor="middle" font-weight="600">PTR</text>
+          <text class="d-m" x="80" y="63" text-anchor="middle">entrada de línea</text>
+          <path class="d-line" d="M140 48 H190 V150 H590"/>
+          <text class="d-m" x="200" y="140">cable de 2 hilos en canalización</text>
+          <g>
+            <rect class="d-box" x="230" y="165" width="70" height="44" rx="5"/><text class="d-t" x="265" y="192" text-anchor="middle">Roseta 1</text>
+            <rect class="d-box" x="360" y="165" width="70" height="44" rx="5"/><text class="d-t" x="395" y="192" text-anchor="middle">Roseta 2</text>
+            <rect class="d-box" x="490" y="165" width="70" height="44" rx="5"/><text class="d-t" x="525" y="192" text-anchor="middle">Roseta 3</text>
+            <path class="d-line" d="M265 150 V165 M395 150 V165 M525 150 V165"/>
+          </g>
+          <text class="d-m" x="590" y="40" text-anchor="end">Todas en paralelo:</text>
+          <text class="d-m" x="590" y="56" text-anchor="end">suenan a la vez y las voces se superponen</text>
+          <text class="d-m" x="590" y="72" text-anchor="end">Máximo recomendado: 3</text>
+        </svg>
+      </div>
+      <div class="key"><b>Máximo 3 teléfonos o rosetas en paralelo.</b> Con más, las tensiones que pone la central se degeneran y no se garantiza la conversación. No hay forma de mantener conversaciones individuales.</div>
+
+      <h3><span class="n">3.3</span>PTR (Punto de Terminación de Red) o PAU</h3>
+      <p>Da protección contra sobretensiones que dañarían los equipos y marca el límite legal entre las responsabilidades de la compañía y las del usuario.</p>
+      <ul class="pts">
+        <li><b>Partes:</b> entrada de línea, carcasa, tapa deslizante, etiqueta, enchufe de autoprueba y salida de cableado de la instalación interior.</li>
+        <li><b>Tapa deslizante:</b> al levantarla se corta la línea telefónica y aparece el enchufe de autoprueba. Enchufando un teléfono se sabe si la avería está en el PTR o en la instalación del usuario.</li>
+        <li><b>PTR de Krone</b> (el de las prácticas): una línea ampliable a dos; el enchufe de autoprueba lleva un tapón de plástico y no tapa deslizante.</li>
+        <li><b>Conmutador prueba/servicio:</b> en prueba queda conectado el enchufe de autoprueba y no la línea; en servicio queda la línea y no funciona el enchufe de autoprueba.</li>
+        <li><b>Caja dual</b> (instalaciones de ONO): el PTR está en su parte derecha, y la misma caja tiene salidas de televisión por cable y ADSL por coaxial.</li>
+      </ul>
+      <div class="tablewrap"><table>
+        <thead><tr><th></th><th>PTR</th><th>PCR (Punto de Conexión de Red)</th></tr></thead>
+        <tbody>
+          <tr><td>Qué es</td><td>Actual</td><td>PTR antiguo de Telefónica</td></tr>
+          <tr><td>Funciones</td><td>Protección y límite de responsabilidades; autoprueba</td><td>Las mismas, más un módulo de autodiagnóstico y filtrado</td></tr>
+          <tr><td>Problema</td><td>—</td><td>Interfería con el buen funcionamiento de la ADSL: si alguien llamaba, la conexión se cortaba</td></tr>
+        </tbody></table></div>
+
+      <h3><span class="n">3.4</span>Roseta o BAT (Base de Acceso al Terminal)</h3>
+      <p>Recibe el hilo telefónico y lo une a un conector hembra 6P2C, 6P4C o 6P6C, del que sale el latiguillo hacia el teléfono. Hay tres tipos:</p>
+      <div class="grid">
+        <div class="box"><h4>De superficie</h4>Atornillables sobre la superficie. Los cables van con tornillos.</div>
+        <div class="box"><h4>Empotrables</h4>Para cajas de pared, también con tornillos. Son las más usadas en edificios de nueva construcción.</div>
+        <div class="box"><h4>Keystone</h4>Para instalaciones modulares. Los cables entran con herramienta de corte e inserción.</div>
+      </div>
+      <p>Una roseta de superficie admite hasta 4 o 6 cables, pero para una línea normal solo se conectan <b>2</b>: 4 si hay servicio especial (teléfonos esclavo, XDP) o varias líneas, y 6 para centralitas privadas o 3 líneas.</p>
+      <div class="key">En una instalación básica, los terminales <b>rojo y verde</b> (o marrón y blanco) van a los dos contactos internos del conector 6p6c hembra. Para saber la correspondencia de los terminales se usa un polímetro.</div>
+      <p><b>En España da igual en qué terminal va cada hilo</b> (rojo con rojo o rojo con verde), porque los teléfonos llevan un rectificador en puente que da la vuelta a la polaridad si está cambiada.</p>
+
+      <h3><span class="n">3.5</span>Cableado interior</h3>
+      <p>Transporta la señal del PTR a las rosetas. Para telefonía básica bastan 2 hilos, conectados a los terminales centrales de la roseta.</p>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Cable</th><th>Vías</th><th>Notas</th></tr></thead>
+        <tbody>
+          <tr><td>Plano</td><td class="mono">2, 4, 6, 8</td><td>Muy útil para latiguillos; en instalaciones se usa menos porque entra mal en canalizaciones y cambios de dirección. De 2 hilos: rojo y verde, o marrón y blanco.</td></tr>
+          <tr><td>Redondo</td><td class="mono">2, 4, 6, 8</td><td>El más usado en instalaciones interiores: pasa mejor por las canalizaciones.</td></tr>
+          <tr><td>Bifilar</td><td class="mono">2</td><td>Dos hilos aislados individualmente (color marfil) y unidos entre sí. Se usa mucho menos que el redondo; ideal para grapar.</td></tr>
+          <tr><td>Multipar</td><td class="mono">25, 50, 75, 100</td><td>Para centralitas e interfonos, y también para ICT.</td></tr>
+        </tbody></table></div>
+
+      <h3><span class="n">3.6</span>Canalización interior de usuario</h3>
+      <p>Son los conductos (tubos o canales, también llamados canaletas) por donde va el cableado. Los <b>tubos</b> se usan en viviendas, donde la instalación queda fija; las <b>canaletas</b> en recintos industriales (clínicas, colegios), donde la instalación puede crecer.</p>
+      <p><b>Según el RD 401/2003, para la instalación inicial solo se permite:</b></p>
+      <div class="grid">
+        <div class="box"><h4>Tubos</h4>Individuales, corrugados o lisos, de 20 mm de diámetro, de plástico o PVC, empotrados en la pared (por ejemplo, Tupersa).</div>
+        <div class="box"><h4>Canaletas</h4>De 3 compartimentos: telefonía básica y RDSI; televisión por cable; radio y TV. El ancho de cada uno es 1,3 veces el diámetro del cable mayor (por ejemplo, Unex).</div>
+      </div>
+      <div class="key"><b>Pisos anteriores al RD 401/2003, ampliaciones y añadidos:</b> deben ir por esas canalizaciones. Si no es posible, no están legislados: puedes usar hilo desnudo con grapas, otras canalizaciones o mezclar tendidos. No es ilegal; tu única obligación es informar al propietario, por escrito, de qué vas a hacer y por qué.</div>
+      <p><b>Tres consejos:</b></p>
+      <ul class="pts">
+        <li>Con hilo desnudo, grapas separadas unos 25 cm, y colocadas al principio y al final de cambios de dirección y ángulos.</li>
+        <li>Separar unos 25 cm el cable de telefonía sin canalizar de los tendidos de baja tensión (220 V).</li>
+        <li>En una canalización de telefonía no se meten otros cables por el mismo conducto: usa separadores o canaletas que los incluyan.</li>
+      </ul>
+      <p class="note">Prácticas del tema: 3.1 instalación básica con rosetas de superficie, 3.2 instalación con rosetas Keystone y 3.3 constitución interna de un PTR y un PCR (comparativa).</p>
+    </section>
+
+    <!-- ================= TEST ================= -->
+    <section class="tema" id="test">
+      <div class="temahead"><div class="tag">Cuestiones</div>
+      <h2>Tests</h2>
+      <p class="lead">Elige un test. Al responder verás si has acertado y por qué. Las opciones se mezclan una vez al cargar la página.</p></div>
+      <div class="tabs" id="testtabs" role="group" aria-label="Test"></div>
+      <div class="testbar" id="testbar">
+        <span class="score" id="score">0 / 10</span>
+        <div class="bar"><i id="barfill"></i></div>
+        <button class="reset" id="reset" type="button">Reiniciar</button>
+      </div>
+      <div id="qs"></div>
+      <div class="final" id="final" hidden></div>
+      <p class="note" id="testnote"></p>
+    </section>
+  </main>
+</div>
+
+<script>
+(function(){
+/* ---------- Navegación: marcar sección activa ---------- */
+var links=[].slice.call(document.querySelectorAll('#nav a'));
+links.forEach(function(a){a.addEventListener('click',function(e){
+  var t=document.querySelector(a.getAttribute('href'));
+  if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+});});
+var secs=['tema1','tema2','tema3','test'].map(function(id){return document.getElementById(id)});
+function onScroll(){
+  var y=window.scrollY+140,cur=0;
+  secs.forEach(function(s,i){if(s.offsetTop<=y)cur=i;});
+  var href='#'+secs[cur].id;
+  links.forEach(function(a){
+    var on=a.getAttribute('href')===href||(cur===3&&a.getAttribute('href')==='#test');
+    a.classList.toggle('on',on);
+  });
+}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+/* ---------- Conectores ---------- */
+var R='var(--cable-red)',G='var(--cable-green)',K='var(--cable-black)',Y='var(--cable-yellow)',O='var(--cable-orange)',B='var(--cable-blue)',W='var(--cable-white)',BR='var(--cable-brown)',OL='var(--cable-olive)';
+function stripe(c){return 'repeating-linear-gradient(45deg,'+c+' 0 6px,var(--cable-white) 6px 12px)';}
+var jacks=[
+ {id:'RJ-11',slots:[null,null,R,G,null,null],cap:'<b>RJ-11 · conector 6P2C.</b> Una línea telefónica a un equipo (terminal, centralita…). Rojo y verde en los dos contactos centrales (pines 3 y 4). Los cables también pueden ser marrón y blanco.'},
+ {id:'RJ-14',slots:[null,K,R,G,Y,null],cap:'<b>RJ-14 · conector 6P4C.</b> Dos líneas telefónicas a un equipo. Línea 1: rojo y verde en los centrales. Línea 2: negro y amarillo en los exteriores.'},
+ {id:'RJ-25',slots:[O,K,R,G,Y,B],cap:'<b>RJ-25 · conector 6P6C.</b> Tres líneas telefónicas a un equipo, con los seis contactos ocupados.'},
+ {id:'RJ-48',slots:[W,O,K,R,G,Y,B,OL],cap:'<b>RJ-48 · conector 8P8C.</b> Una línea RDSI a un equipo (teléfono RDSI a roseta; TR1 a bus pasivo).'},
+ {id:'T-568B',slots:[stripe('var(--cable-orange)'),O,stripe('var(--cable-green)'),B,stripe('var(--cable-blue)'),G,stripe('var(--cable-brown)'),BR],cap:'<b>T-568B · conector 8P8C (RJ-45).</b> Norma de datos usada también para RDSI. Pines 1 a 8: blanco/naranja, naranja, blanco/verde, azul, blanco/azul, verde, blanco/marrón, marrón.',stripes:true}
+];
+var jt=document.getElementById('jacktabs'),jb=document.getElementById('jack'),jc=document.getElementById('jackcap');
+function showJack(i){
+  [].forEach.call(jt.children,function(b,k){b.setAttribute('aria-pressed',k===i?'true':'false')});
+  jb.innerHTML=jacks[i].slots.map(function(c,n){
+    var st=c?(String(c).indexOf('gradient')>-1?'background:'+c:'background:'+c):'';
+    return '<div class="slot"><i class="'+(c?'on':'')+'" style="'+st+'"></i><span>'+(n+1)+'</span></div>';
+  }).join('');
+  jc.innerHTML=jacks[i].cap;
+}
+jacks.forEach(function(j,i){var b=document.createElement('button');b.type='button';b.textContent=j.id;b.setAttribute('aria-pressed','false');b.addEventListener('click',function(){showJack(i)});jt.appendChild(b)});
+showJack(0);
+
+/* ---------- Fases de la llamada ---------- */
+var fases=[
+ {t:'Reposo',v1:'48 V',s1:'Consumo menor de 1 mA',v2:'48 V',s2:'Consumo menor de 1 mA',n:'Ambos teléfonos colgados. La polaridad depende de cómo estén conectados los cables.'},
+ {t:'Descuelga',v1:'≈10 V',s1:'36 a 49,5 mA + tono de invitación a marcar (425 Hz, ≈200 mV pico)',v2:'48 V',s2:'Sin cambios',n:'Al descolgar se genera más de 15 mA y la central interpreta que la línea está tomada. La tensión cae a un valor entre 6 y 18 V.'},
+ {t:'Marca',v1:'≈10 V',s1:'Tonos DTMF o pulsos superpuestos a la continua',v2:'48 V',s2:'Sin cambios',n:'Los tonos o pulsos de marcado se superponen a los valores de continua.'},
+ {t:'Llamada',v1:'≈10 V',s1:'Escucha el tono de llamada',v2:'48 V',s2:'+ señal de llamada de ≈25 Hz y 75 V eficaces',n:'En el teléfono del llamado se mantienen los 48 V y se superpone la señal de llamada.'},
+ {t:'Comunica',v1:'≈10 V',s1:'Tonos especiales (comunica, línea muerta…)',v2:'48 V',s2:'Sin cambios',n:'Si la llamada no se puede realizar, la central avisa al llamante con tonos especiales.'},
+ {t:'Conversación',v1:'−10 V',s1:'Polaridad invertida durante toda la conversación',v2:'10 V',s2:'Mantiene la polaridad y baja a unos 10 V',n:'En el instante en que el llamado descuelga, la tensión del llamante invierte la polaridad (de 10 V a −10 V).'},
+ {t:'Cuelga',v1:'10 V',s1:'La polaridad vuelve a invertirse',v2:'48 V',s2:'Colgado',n:'Cuando el interlocutor cuelga, la polaridad vuelve al valor inicial. Al colgar el otro teléfono, la tensión retorna a 48 V y la línea queda en reposo.'}
+];
+var sb=document.getElementById('steps');
+function showFase(i){
+  [].forEach.call(sb.children,function(b,k){b.setAttribute('aria-pressed',k===i?'true':'false')});
+  var f=fases[i];
+  document.getElementById('v1').textContent=f.v1;document.getElementById('s1').textContent=f.s1;
+  document.getElementById('v2').textContent=f.v2;document.getElementById('s2').textContent=f.s2;
+  document.getElementById('stepnote').textContent=f.n;
+}
+fases.forEach(function(f,i){var b=document.createElement('button');b.type='button';b.textContent=f.t;b.setAttribute('aria-pressed','false');b.addEventListener('click',function(){showFase(i)});sb.appendChild(b)});
+showFase(0);
+
+/* ---------- Teclado DTMF (asignación del libro) ---------- */
+var cols=[1209,1336,1477],rows=[941,852,770,697];
+var keys=[['1','2','3'],['4','5','6'],['7','8','9'],['*','0','#']];
+var dt=document.getElementById('dtmf'),dout=document.getElementById('dtmfout');
+dt.appendChild(document.createElement('span'));
+cols.forEach(function(c){var s=document.createElement('span');s.className='h';s.textContent=c+' Hz';dt.appendChild(s)});
+keys.forEach(function(r,ri){
+  var l=document.createElement('span');l.className='r';l.textContent=rows[ri]+' Hz';dt.appendChild(l);
+  r.forEach(function(k,ci){
+    var b=document.createElement('button');b.type='button';b.textContent=k;b.setAttribute('aria-pressed','false');
+    b.addEventListener('click',function(){
+      [].forEach.call(dt.querySelectorAll('button'),function(x){x.setAttribute('aria-pressed','false')});
+      b.setAttribute('aria-pressed','true');
+      dout.textContent='Tecla '+k+': '+rows[ri]+' Hz + '+cols[ci]+' Hz';
+    });
+    dt.appendChild(b);
+  });
+});
+
+/* ---------- Tests ---------- */
+/* En cada pregunta la primera opción es la correcta; se mezclan al cargar. */
+var sets=[
+{id:'t1',name:'Tema 1 · Conectorizado',qs:[
+ {q:'¿Qué normativa se utiliza en España para realizar el conectorizado telefónico?',
+  o:['No hay normalización propia: se recurre, oficiosamente, a las normativas americanas (USOC y Registered Jack), y a menudo se aplican mal.','Una norma UNE de AENOR de uso obligatorio para todo conector telefónico.','La norma de FACEL, que fija los nombres de los conectores.','Solo la T-568B, tanto para telefonía como para datos.'],
+  e:'AENOR y FACEL confirmaron la falta de normalización en España. En la práctica se usa RJ-11 para telefonía analógica y T-568B con conector RJ-45 (8P8C) para cableado de datos.'},
+ {q:'Se desea conectar una línea telefónica desde una roseta a un teléfono. ¿Cómo son los extremos del latiguillo?',
+  o:['Conector 6P2C (RJ-11), con el hilo rojo y el verde en los dos contactos centrales (pines 3 y 4).','Conector 8P8C con los ocho hilos según T-568B.','Conector 4P4C (RJ-9) con cuatro hilos.','Conector 6P6C con tres pares de colores.'],
+  e:'RJ-11 identifica una línea telefónica a un equipo y usa solo los dos contactos centrales del conector de 6 posiciones. Los colores pueden ser también marrón y blanco.'},
+ {q:'Una centralita de usuario tiene 2 líneas de entrada y usa RJ-14. ¿Qué conector y qué posición de colores lleva?',
+  o:['Conector 6P4C: línea 1 con rojo y verde en los centrales; línea 2 con negro y amarillo en los exteriores.','Conector 6P2C con rojo y verde en los centrales.','Conector 6P6C con las tres líneas: naranja, negro, rojo, verde, amarillo y azul.','Conector 8P8C con blanco/naranja, naranja, blanco/verde y azul.'],
+  e:'RJ-14 conecta dos líneas telefónicas con cuatro contactos: negro, rojo, verde y amarillo, de izquierda a derecha.'},
+ {q:'¿Cuáles son los cables más usuales para hacer latiguillos?',
+  o:['El cable telefónico plano de 4, 6 u 8 vías.','El cable multipar de 25 pares.','El cable bifilar de dos hilos unidos.','El cable redondo, porque es el más usado para latiguillos.'],
+  e:'El plano es muy útil para latiguillos. El redondo se usa poco en ellos porque su cubierta entra forzada en el conector, y se reserva para instalaciones interiores. Bifilar y multipar no se usan para conectorizar.'},
+ {q:'¿Cuál es el procedimiento para usar un comprobador de cableado?',
+  o:['Conectar un extremo del latiguillo al receptor y el otro al emisor, pulsar autocomprobación y mirar los leds.','Conectar solo un extremo al emisor y medir tensión con un polímetro.','Conectar ambos extremos a la misma roseta y llamar por teléfono.','Pelar los dos extremos y acercarlos al panel indicador.'],
+  e:'Si el cable está bien se iluminan los 8 leds (o los 2, 4 o 6 centrales en cables de 2, 4 o 6 vías). También detecta cortocircuito, cruzado y sin conexión.'},
+ {q:'¿Es necesario un pelacables si ya se dispone de una tenaza crimpadora?',
+  o:['No es imprescindible: la crimpadora incorpora cuchillas de pelado y de corte.','Sí, porque la crimpadora no puede pelar la cubierta.','Sí, porque la crimpadora solo sirve para cortar el cable.','No, porque los conectores telefónicos no necesitan pelar el cable.'],
+  e:'La tenaza crimpadora tiene mango, cuchillas de pelado de la cubierta, cuchilla de corte y huecos de crimpado. El pelacables sigue siendo útil para pelar sin dañar los hilos.'},
+ {q:'Hacemos un latiguillo de 2 hilos con los colores cambiados en un extremo y correctos en el otro. ¿Qué indica el comprobador?',
+  o:['Cable cruzado: los leds se iluminan en orden distinto en emisor y receptor.','Cortocircuito entre los dos hilos.','Cable correcto, con los leds centrales encendidos.','Sin conexión en ambos hilos.'],
+  e:'Con los hilos intercambiados en un extremo el comprobador informa de cruce de hilos. Aunque en telefonía analógica la polaridad suele dar igual, el comprobador detecta la diferencia.'},
+ {q:'¿Cuáles son los colores de la norma T-568B y qué conector usa?',
+  o:['Conector 8P8C (RJ-45): blanco/naranja, naranja, blanco/verde, azul, blanco/azul, verde, blanco/marrón, marrón.','Conector 6P6C: naranja, negro, rojo, verde, amarillo, azul.','Conector 8P8C: blanco/verde, verde, blanco/naranja, azul, blanco/azul, naranja, blanco/marrón, marrón.','Conector 6P4C: negro, rojo, verde, amarillo.'],
+  e:'La tercera opción es el orden de la T-568A (verde y naranja intercambiados). La T-568B es la norma de datos EIA/TIA 568B usada también para latiguillos RDSI.'},
+ {q:'¿Qué interés tiene la norma T-568B para telefonía?',
+  o:['Permite usar el cableado y el conector de datos (8P8C) también para RDSI; el par central coincide con los contactos centrales de un RJ-11.','Obliga a usar siempre cable plano de 4 vías.','Sustituye al conector 6P2C en todas las rosetas analógicas.','Solo sirve para televisión por cable.'],
+  e:'En el 8P8C los pines centrales (4 y 5) quedan en la misma posición que los dos contactos de un RJ-11, así que se puede compartir cableado entre datos y telefonía.'},
+ {q:'¿Cuántos hilos se necesitan para conectar un teléfono RDSI a una roseta?',
+  o:['4 hilos (2 pares), en un conector 8P8C.','2 hilos, en un conector 6P2C.','6 hilos (3 pares), en un conector 6P6C.','Los 8 hilos siempre, sin excepción.'],
+  e:'El bus S0 de RDSI usa 2 pares. El conector es un 8P8C (interfaz RJ-48 en la tabla del libro).'}
+]},
+{id:'t2',name:'Tema 2 · Interfaces de línea',qs:[
+ {q:'¿Qué tensión continua tiene un teléfono en reposo?',
+  o:['48 V nominales (se admiten de 42 a 57 V).','10 V.','75 V eficaces.','0 V, porque la línea está inactiva.'],
+  e:'Con ambos teléfonos colgados la línea presenta unos 48 V continuos, con un consumo despreciable (menor de 1 mA).'},
+ {q:'¿Qué nivel de continua tiene un teléfono cuando se levanta el auricular para llamar?',
+  o:['Cae a un valor entre 6 y 18 V, típicamente unos 10 V.','Sube a 75 V.','Se mantiene en 48 V.','Baja a 0 V.'],
+  e:'La central detecta una corriente superior a 15 mA y entiende que la línea está tomada. La tensión cae y la intensidad queda entre 36 y 49,5 mA.'},
+ {q:'¿Cuál es la frecuencia del tono de invitación a marcar?',
+  o:['425 Hz (unos 200 mV de pico).','25 Hz.','941 Hz.','1209 Hz.'],
+  e:'El tono de invitación a marcar se superpone a la continua de la línea tomada. Los 25 Hz son de la señal de llamada.'},
+ {q:'¿Qué dos tipos de marcación hay y en qué consiste cada una?',
+  o:['Por pulsos (tantos pulsos como indique la tecla) y por tonos DTMF (una pareja de frecuencias por tecla).','Por tonos (tantos pulsos como indique la tecla) y por pulsos (una pareja de frecuencias).','Por llamada (25 Hz) y por invitación (425 Hz).','Por polaridad (±10 V) y por corriente (36 mA).'],
+  e:'Los pulsos son lentos con números largos. DTMF suma dos señales de distinta frecuencia, elegidas para resistir el ruido.'},
+ {q:'¿Qué dos tonos se generan al pulsar la tecla 7 en un sistema DTMF (según la Fig. 2.10 del libro)?',
+  o:['770 Hz y 1209 Hz.','852 Hz y 1477 Hz.','697 Hz y 1336 Hz.','941 Hz y 1209 Hz.'],
+  e:'Según el libro, la tecla 7 está en la fila de 770 Hz y la columna de 1209 Hz. En el estándar internacional la tecla 7 es 852 + 1209 Hz.'},
+ {q:'¿Qué ocurre con la tensión en el teléfono llamante cuando descuelga el llamado?',
+  o:['Se invierte la polaridad (pasa de 10 V a −10 V) y se mantiene así durante la conversación.','Sube a 48 V.','Cae a 0 V.','Se mantiene en 10 V y aparece la señal de 25 Hz.'],
+  e:'En el teléfono del llamado la polaridad se mantiene y la tensión baja a unos 10 V. Al colgar, la polaridad vuelve a invertirse.'},
+ {q:'¿Qué elementos hacen falta para una comunicación básica entre dos teléfonos sin tonos de llamada ni señalización?',
+  o:['Los dos teléfonos conectados entre sí y una fuente de tensión continua que haga el papel de la central.','Solo los dos teléfonos y un cable, sin ninguna alimentación.','Un osciloscopio y un generador de señal de 25 Hz.','Dos rosetas y un PTR.'],
+  e:'Es la central la que genera las tensiones continuas y las señales. Sin ella se puede hablar si se aporta la alimentación, pero no suenan los timbres.'},
+ {q:'¿Cuál es la intensidad típica de un terminal telefónico colgado y descolgado?',
+  o:['Menor de 1 mA colgado; entre 36 y 49,5 mA descolgado.','Entre 36 y 49,5 mA colgado; menor de 1 mA descolgado.','75 mA colgado; 25 mA descolgado.','0 mA en ambos casos.'],
+  e:'Al descolgar se genera primero una corriente superior a 15 mA a 48 V, que luego se estabiliza entre 36 y 49,5 mA cuando la tensión cae a unos 10 V.'},
+ {q:'Tono de marcar y tono de comunicando: ¿en qué se diferencian?',
+  o:['Ambos son de 425 Hz; el de marcar es continuo y el de comunicando es intermitente.','El de marcar es de 425 Hz y el de comunicando de 25 Hz.','El de marcar es intermitente y el de comunicando continuo.','Usan tensiones continuas diferentes y la misma cadencia.'],
+  e:'Las cadencias exactas (milisegundos de tono y de silencio) están en la tabla de tu práctica. La idea: mismo tono, distinto ritmo.'},
+ {q:'Los tonos de la tabla usan la misma frecuencia. ¿Cómo se distingue una situación de otra?',
+  o:['Por la cadencia: el tiempo con tono y el tiempo de silencio.','Por la amplitud en voltios, que es distinta en cada caso.','Por la polaridad de la línea.','Por la frecuencia, que cambia ligeramente en cada tono.'],
+  e:'La frecuencia usada es 425 Hz. Marcar es continuo; llamada, comunicando y error se diferencian por la duración del tono y de la pausa.'}
+]},
+{id:'t3',name:'Tema 3 · Instalación interior',qs:[
+ {q:'¿Cuál es el número máximo de terminales telefónicos que pueden tenerse conectados a la vez en paralelo?',
+  o:['3.','1.','5.','8.'],
+  e:'No se recomienda usar más de tres teléfonos en paralelo. Por eso conviene no colocar más de tres rosetas en una instalación básica.'},
+ {q:'¿Qué puede ocurrir si se sobrepasa ese número?',
+  o:['Las tensiones puestas por la central se degeneran y no se garantiza la conversación.','Se funde el PTR de forma inmediata.','Los teléfonos dejan de sonar, pero se puede hablar.','La central corta la línea por sobrecarga.'],
+  e:'En el esquema básico todas las rosetas están en paralelo: suenan a la vez y se puede hablar por todos a la vez, con las voces superpuestas.'},
+ {q:'¿Cuál es la diferencia entre un PTR y un PCR?',
+  o:['El PCR es el PTR antiguo de Telefónica, con módulo de autodiagnóstico y filtrado que interfería con la ADSL.','El PCR es para RDSI y el PTR para analógica.','El PTR es para viviendas y el PCR para empresas.','No hay diferencia: son dos nombres del mismo aparato.'],
+  e:'El módulo del PCR permitía a la compañía detectar mejor la avería, pero cortaba la conexión ADSL cuando un usuario llamaba.'},
+ {q:'¿Cuáles son las partes de un PTR?',
+  o:['Entrada de línea, carcasa, tapa deslizante, etiqueta, enchufe de autoprueba y salida de cableado interior.','Conmutador, módulo de filtrado, rectificador en puente y timbre.','Roseta, canaleta, tubo corrugado y grapas.','Emisor, receptor, panel indicador y botón de comprobación.'],
+  e:'La tapa deslizante, al levantarla, corta la línea y deja ver el enchufe de autoprueba, útil para saber si la avería es del PTR o de la instalación del usuario.'},
+ {q:'¿Cuáles son las partes de un PCR?',
+  o:['Las del PTR (carcasa, enchufe de autoprueba, conexiones) más un módulo electrónico de autodiagnóstico y filtrado.','Solo una carcasa y dos tornillos, sin electrónica.','Tres compartimentos: telefonía, TV por cable y radio.','Un conmutador de prueba/servicio y salidas de TV por cable.'],
+  e:'El PCR cumplía las funciones del PTR y añadía un módulo de autodiagnóstico y filtrado en una placa interior (Fig. 3.4).'},
+ {q:'¿Qué tipos de rosetas telefónicas existen?',
+  o:['De superficie, empotrables y Keystone.','Planas, redondas y bifilares.','RJ-11, RJ-14 y RJ-25.','Analógicas, RDSI y IP.'],
+  e:'Las empotrables son las más usadas en edificios de nueva construcción. Las Keystone son para instalaciones modulares y se conectan con herramienta de corte e inserción.'},
+ {q:'¿Qué tipos de cables interiores de telefonía existen?',
+  o:['Plano, redondo, bifilar y multipar.','Coaxial, fibra y par trenzado.','Corrugado, liso y rígido.','Superficie, empotrado y Keystone.'],
+  e:'El redondo es el más usado en instalaciones interiores. El multipar (25, 50, 75 o 100 hilos) se usa en centralitas, interfonos e ICT.'},
+ {q:'En una vivienda de nueva construcción, ¿qué tipo de tubos han de usarse?',
+  o:['Tubos individuales, corrugados o lisos, de 20 mm de diámetro, de plástico o PVC, empotrados en la pared.','Tubos metálicos de 50 mm vistos.','Tubos de 3 compartimentos de cualquier diámetro.','No se exige ningún tipo de tubo.'],
+  e:'Es lo que permite el RD 401/2003 para la instalación inicial.'},
+ {q:'¿Y de canaletas?',
+  o:['De 3 compartimentos (telefonía básica y RDSI; TV por cable; radio y TV), con ancho de cada uno de 1,3 veces el diámetro del cable mayor.','De un solo compartimento, para todos los cables mezclados.','De 2 compartimentos de 20 mm cada uno.','De 3 compartimentos, de un ancho igual al del cable menor.'],
+  e:'Se usan sobre todo en recintos industriales (clínicas, colegios), donde la instalación puede crecer.'},
+ {q:'¿Pueden usarse legalmente otras canalizaciones en pisos anteriores al RD 401/2003 o en ampliaciones y añadidos?',
+  o:['Sí: si no es posible usar las canalizaciones del RD, esos tendidos no están legislados. Solo hay que informar al propietario por escrito.','No, es ilegal en cualquier caso.','Sí, pero solo con autorización previa de la compañía telefónica.','Sí, pero únicamente con tubos de 20 mm empotrados.'],
+  e:'Es alegal, no ilegal. Puedes usar hilo desnudo con grapas, otras canalizaciones o mezclar tendidos.'}
+]},
+{id:'t4',name:'Fundamentos (complementario)',note:'Este test no sale de los PDFs de temario: las respuestas son de conocimiento general sobre telefonía analógica.',qs:[
+ {q:'Para el funcionamiento de un teléfono analógico, ¿qué elementos se necesitan?',
+  o:['Micrófono, auricular (altavoz), teclado o dial, timbre y circuito de conexión a la línea de dos hilos alimentada por la central.','Solo un micrófono y un altavoz, sin alimentación.','Una tarjeta SIM y una antena.','Un router y un módem de fibra.'],
+  e:'La alimentación y las señales llegan por la propia línea desde la central.'},
+ {q:'¿Qué tipo de corriente circula por un teléfono y con qué valores?',
+  o:['Continua: 48 V en reposo; unos 10 V y 36 a 49,5 mA al descolgar. La voz y las señales viajan superpuestas.','Alterna de 230 V a 50 Hz, siempre.','Continua de 5 V y 1 A, siempre.','Alterna de 1 V y 1 mA solamente.'],
+  e:'La señal de llamada sí es alterna (25 Hz y 75 V eficaces), pero la alimentación es continua.'},
+ {q:'Explica brevemente el micrófono y el altavoz.',
+  o:['El micrófono convierte la voz en variaciones de corriente; el altavoz hace lo contrario, moviendo una membrana con esa corriente.','El micrófono convierte corriente en sonido y el altavoz sonido en corriente.','Los dos amplifican la tensión de 48 V.','Ambos solo sirven para generar el timbre.'],
+  e:'Es el principio de todo transductor de teléfono: sonido ↔ señal eléctrica.'},
+ {q:'¿Cuál es la solución cuando hay un número elevado de teléfonos conectados entre sí?',
+  o:['Una central de conmutación, con una conexión en estrella desde cada teléfono.','Conectarlos todos en paralelo en el mismo cable.','Conectar cada teléfono con todos los demás.','Duplicar la tensión de línea.'],
+  e:'Con muchos teléfonos, una malla o un paralelo no escalan: se concentran en una central que conmuta las llamadas.'},
+ {q:'¿Qué tipo de conexión topológica serviría para un número menor de teléfonos?',
+  o:['Una conexión directa punto a punto o en malla entre ellos, sin central.','Una estrella con central de conmutación.','Un anillo con fibra óptica.','Una red HFC.'],
+  e:'Para dos teléfonos basta unirlos directamente; con unos pocos, cada uno con cada otro.'},
+ {q:'¿En qué consiste una centralita IP?',
+  o:['En una centralita (PBX) que gestiona las llamadas como voz sobre IP (VoIP) a través de la red de datos.','En una centralita analógica con más líneas RTB.','En un PTR con salida de ADSL.','En un teléfono con pantalla.'],
+  e:'Las extensiones y las troncales viajan como paquetes IP en lugar de por pares de cobre dedicados.'},
+ {q:'¿Cómo está basada la red de acceso de telefonía analógica y es válida para transmisión de datos?',
+  o:['En el par de cobre (bucle de abonado) hasta la central. Con módems o xDSL sirve para datos, aunque con capacidad limitada.','En fibra óptica hasta el hogar. Es ideal para datos.','En cable coaxial. Solo vale para TV.','En radio. No vale para datos.'],
+  e:'La ADSL aprovecha ese mismo par de cobre, de ahí la necesidad de filtros.'},
+ {q:'¿Qué diferencia hay entre las redes FTTH y las HFC?',
+  o:['FTTH lleva fibra hasta el hogar; HFC combina fibra hasta un nodo y cable coaxial hasta el usuario.','FTTH usa cobre y HFC usa fibra.','HFC lleva fibra hasta el hogar y FTTH usa radio.','No hay diferencia.'],
+  e:'HFC significa red híbrida de fibra y coaxial; FTTH, fibra hasta el hogar.'},
+ {q:'Enumera los tipos de redes de acceso para sistemas de telefonía fija.',
+  o:['Par de cobre (RTB y xDSL), HFC, FTTH y acceso radio o inalámbrico.','Solo el par de cobre.','Solo la fibra óptica.','Bluetooth, NFC y Wi-Fi Direct.'],
+  e:'Las cuatro familias son las habituales para telefonía fija.'},
+ {q:'¿Qué red de acceso está sustituyendo a la red RTB?',
+  o:['La fibra óptica (FTTH) con telefonía IP.','El par trenzado de cobre.','Las líneas de 50 Hz de la red eléctrica.','Las redes de satélite geoestacionario.'],
+  e:'La RTB, basada en cobre, se está apagando en favor de fibra y voz sobre IP.'}
+]}
+];
+
+var testTabs=document.getElementById('testtabs'),qsEl=document.getElementById('qs'),scoreEl=document.getElementById('score'),fillEl=document.getElementById('barfill'),finalEl=document.getElementById('final'),noteEl=document.getElementById('testnote');
+function mulberry(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+sets.forEach(function(s,si){
+  s.qs.forEach(function(q,qi){
+    var rnd=mulberry(1000*(si+1)+qi*7+3);
+    var idx=q.o.map(function(_,i){return i});
+    for(var i=idx.length-1;i>0;i--){var j=Math.floor(rnd()*(i+1));var t=idx[i];idx[i]=idx[j];idx[j]=t}
+    q.opts=idx.map(function(k){return {t:q.o[k],ok:k===0}});
+  });
+});
+var cur=0,state=[];
+function loadSet(i){
+  cur=i;var s=sets[i];state=s.qs.map(function(){return null});
+  [].forEach.call(testTabs.children,function(b,k){b.setAttribute('aria-pressed',k===i?'true':'false')});
+  noteEl.textContent=s.note||'';
+  finalEl.hidden=true;
+  qsEl.innerHTML='';
+  s.qs.forEach(function(q,qi){
+    var d=document.createElement('div');d.className='q';
+    var h='<div class="qn">PREGUNTA '+(qi+1)+' DE '+s.qs.length+'</div><div class="qt"></div><div class="opts"></div><div class="exp" hidden></div>';
+    d.innerHTML=h;d.querySelector('.qt').textContent=q.q;
+    var ob=d.querySelector('.opts');
+    q.opts.forEach(function(o,oi){
+      var b=document.createElement('button');b.type='button';b.className='opt';
+      var l=document.createElement('span');l.className='l';l.textContent=String.fromCharCode(65+oi)+'.';
+      var tx=document.createElement('span');tx.textContent=o.t;
+      b.appendChild(l);b.appendChild(tx);
+      b.addEventListener('click',function(){answer(qi,oi,d)});
+      ob.appendChild(b);
+    });
+    qsEl.appendChild(d);
+  });
+  updScore();
+}
+function answer(qi,oi,card){
+  if(state[qi]!==null)return;
+  var q=sets[cur].qs[qi];state[qi]=oi;
+  var btns=card.querySelectorAll('.opt');
+  [].forEach.call(btns,function(b,k){
+    b.disabled=true;
+    if(q.opts[k].ok)b.classList.add('ok');
+    else if(k===oi)b.classList.add('ko');
+    else b.classList.add('dim');
+  });
+  var ex=card.querySelector('.exp');
+  ex.textContent=(q.opts[oi].ok?'Correcto. ':'No es esa. ')+q.e;ex.hidden=false;
+  updScore();
+}
+function updScore(){
+  var s=sets[cur],n=s.qs.length,done=0,ok=0;
+  state.forEach(function(a,i){if(a!==null){done++;if(s.qs[i].opts[a].ok)ok++}});
+  scoreEl.textContent=ok+' / '+n+' aciertos · '+done+' respondidas';
+  fillEl.style.width=(done/n*100)+'%';
+  if(done===n){
+    finalEl.hidden=false;
+    finalEl.textContent=ok===n?'Test completo sin fallos.':'Has acertado '+ok+' de '+n+'. Repasa las explicaciones de las que fallaste y pulsa Reiniciar para repetirlo.';
+  } else finalEl.hidden=true;
+}
+sets.forEach(function(s,i){var b=document.createElement('button');b.type='button';b.textContent=s.name;b.setAttribute('aria-pressed','false');b.addEventListener('click',function(){loadSet(i)});testTabs.appendChild(b)});
+document.getElementById('reset').addEventListener('click',function(){loadSet(cur)});
+loadSet(0);
+})();
+</script>
+
+</body></html>

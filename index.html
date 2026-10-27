@@ -206,12 +206,13 @@ tbody tr:nth-child(even) td{background:#F4F8FA}
 
 <div class="shell">
   <aside class="side">
-    <p class="brand">Guía de<br>Telefonía<small>TEMAS 1–3 · RESUMEN + TEST</small></p>
+    <p class="brand">Guía de<br>Telefonía<small>TEMAS 1–4 · RESUMEN + TEST</small></p>
     <ul class="nav" id="nav">
       <li class="grp">Resumen</li>
       <li><a href="#tema1">1 · Conectorizado</a></li>
       <li><a href="#tema2">2 · Interfaces de línea</a></li>
       <li><a href="#tema3">3 · Instalación interior</a></li>
+      <li><a href="#tema4">4 · Instalación flexible</a></li>
       <li class="grp">Cuestiones tipo test</li>
       <li><a href="#test">Elegir test</a></li>
     </ul>
@@ -220,8 +221,8 @@ tbody tr:nth-child(even) td{background:#F4F8FA}
   <main>
     <header class="hero">
       <h1>Instalaciones de telefonía</h1>
-      <p>Resumen de los tres temas de prácticas, con los esquemas que hay que saber de memoria, y un test por tema para comprobar lo que has retenido.</p>
-      <div class="stats"><span><b>3</b> temas</span><span><b>40</b> preguntas tipo test</span><span>Respuesta y explicación al instante</span></div>
+      <p>Resumen de los cuatro temas de prácticas, con los esquemas que hay que saber de memoria, y un test por tema para comprobar lo que has retenido.</p>
+      <div class="stats"><span><b>4</b> temas</span><span><b>50</b> preguntas tipo test</span><span>Respuesta y explicación al instante</span></div>
     </header>
 
     <!-- ================= TEMA 1 ================= -->
@@ -432,11 +433,84 @@ tbody tr:nth-child(even) td{background:#F4F8FA}
       <p class="note">Prácticas del tema: 3.1 instalación básica con rosetas de superficie, 3.2 instalación con rosetas Keystone y 3.3 constitución interna de un PTR y un PCR (comparativa).</p>
     </section>
 
+
+    <!-- ================= TEMA 4 ================= -->
+    <section class="tema" id="tema4">
+      <div class="temahead"><div class="tag">Tema 4</div>
+      <h2>Instalaciones flexibles de telefonía interior</h2>
+      <p class="lead">Cómo usar un repartidor para preparar la instalación ante futuras ampliaciones, reorganizar líneas y evitar volver a tender cables.</p></div>
+
+      <h3><span class="n">4.1</span>Introducción y escenario profesional</h3>
+      <p>En una instalación interior básica, los cables suelen ir directamente desde el PTR hasta las rosetas. Si una empresa crece, cambia de distribución o necesita nuevas líneas, ese sistema obliga a volver a tirar canalizaciones y cableado.</p>
+      <p>La solución es una <b>instalación flexible o sistema de precableado</b>: se deja un punto central de distribución y se llevan hasta él los cables de los PTR y de todas las rosetas. Así las ampliaciones se realizan reorganizando conexiones, sin rehacer la instalación.</p>
+      <div class="key"><b>Idea clave:</b> el repartidor permite adaptar rápidamente la instalación a cambios de líneas, puestos y rosetas, reduciendo tiempo, obra y riesgo de errores.</div>
+
+      <h3><span class="n">4.2</span>Esquema general de una instalación flexible</h3>
+      <p>El sistema se organiza alrededor de un <b>repartidor</b>, también llamado cuadro de distribución o registro interior. Todos los cables llegan a él: los procedentes de los PTR y los que salen hacia las rosetas.</p>
+      <div class="diagram">
+        <svg viewBox="0 0 700 270" role="img" aria-label="Dos PTR conectados a un repartidor y varias rosetas">
+          <rect class="d-acc" x="20" y="28" width="125" height="58" rx="6"/>
+          <text class="d-t" x="82" y="54" text-anchor="middle" font-weight="600">PTR 1</text>
+          <text class="d-m" x="82" y="73" text-anchor="middle">línea 1</text>
+          <rect class="d-acc" x="20" y="178" width="125" height="58" rx="6"/>
+          <text class="d-t" x="82" y="204" text-anchor="middle" font-weight="600">PTR 2</text>
+          <text class="d-m" x="82" y="223" text-anchor="middle">línea 2</text>
+          <rect class="d-box" x="260" y="88" width="180" height="90" rx="6"/>
+          <text class="d-t" x="350" y="125" text-anchor="middle" font-weight="600">Repartidor IDC</text>
+          <text class="d-m" x="350" y="146" text-anchor="middle">regletas + puentes</text>
+          <path class="d-line" d="M145 57 H220 V125 H260"/>
+          <path class="d-line" d="M145 207 H220 V151 H260"/>
+          <path class="d-line" d="M440 110 H535 V48 H655"/>
+          <path class="d-line" d="M440 135 H535 V125 H655"/>
+          <path class="d-line" d="M440 160 H535 V202 H655"/>
+          <rect class="d-box" x="655" y="28" width="38" height="40" rx="5"/><text class="d-m" x="674" y="53" text-anchor="middle">R1</text>
+          <rect class="d-box" x="655" y="105" width="38" height="40" rx="5"/><text class="d-m" x="674" y="130" text-anchor="middle">R2</text>
+          <rect class="d-box" x="655" y="182" width="38" height="40" rx="5"/><text class="d-m" x="674" y="207" text-anchor="middle">R3</text>
+          <text class="d-m" x="350" y="205" text-anchor="middle">punto central de conexión</text>
+        </svg>
+      </div>
+      <p>La instalación es flexible porque las conexiones entre las líneas de entrada y las rosetas se pueden cambiar en el repartidor. Es segura porque evita prolongadores improvisados y permite emplear conexiones cortas y fiables.</p>
+
+      <h3><span class="n">4.3</span>Tipos de repartidor</h3>
+      <div class="grid">
+        <div class="box"><h4>Regletas de corte e inserción (IDC)</h4>Los conductores se insertan en ranuras mediante una herramienta de corte e inserción. Es el sistema más utilizado por sus características eléctricas y de seguridad.</div>
+        <div class="box"><h4>Regletas de tornillo</h4>Los cables quedan sujetos mediante tornillos. Es una solución sencilla, aunque menos habitual en este tipo de precableado.</div>
+        <div class="box"><h4>Wrapping de cableado</h4>La unión se realiza enrollando el conductor sobre un terminal. Se emplea en aplicaciones específicas.</div>
+      </div>
+
+      <h3><span class="n">4.4</span>Repartidor IDC: montaje y conexión</h3>
+      <p>Un repartidor IDC está formado por uno o varios <b>portarregletas</b>, las regletas IDC y una tapa o carcasa. En algunos modelos incorpora regletas de derivación o bornes auxiliares.</p>
+      <ul class="pts">
+        <li>Colocar las regletas en el portarregletas.</li>
+        <li>Llevar los cables de los PTR a las regletas de entrada.</li>
+        <li>Llevar los cables de las rosetas a las regletas de salida.</li>
+        <li>Insertar cada hilo en su posición con la herramienta de corte e inserción.</li>
+        <li>Realizar puentes entre las regletas para decidir qué rosetas quedan conectadas a cada línea.</li>
+        <li>Comprobar la continuidad y etiquetar líneas, regletas y rosetas.</li>
+      </ul>
+      <div class="key"><b>Precaución:</b> los puentes determinan la distribución del servicio. Antes de cambiar una conexión hay que identificar la línea y trabajar con orden para no mezclar pares ni provocar averías.</div>
+
+      <h3><span class="n">4.5</span>Ejemplo de conexión y ventajas</h3>
+      <p>Una pequeña empresa tiene tres salas, cada una con una roseta. Las salas 1 y 3 deben compartir la línea 1, mientras que la sala 2 queda conectada exclusivamente a la línea 2. Los PTR se conectan a las regletas de entrada del repartidor y, mediante puentes, se enlazan con las salidas correspondientes.</p>
+      <div class="tablewrap"><table>
+        <thead><tr><th>Elemento</th><th>Conexión</th><th>Resultado</th></tr></thead>
+        <tbody>
+          <tr><td>PTR 1</td><td>Regleta de entrada de la línea 1</td><td>Alimenta las rosetas 1 y 3 mediante puentes.</td></tr>
+          <tr><td>PTR 2</td><td>Regleta de entrada de la línea 2</td><td>Alimenta en exclusiva la roseta 2.</td></tr>
+          <tr><td>Repartidor</td><td>Puentes entre entradas y salidas</td><td>Permite cambiar la distribución sin recablear toda la instalación.</td></tr>
+        </tbody></table></div>
+      <div class="grid">
+        <div class="box"><h4>Flexible</h4>Si mañana se necesitan más líneas o se cambia una roseta, basta con modificar los puentes o añadir cableado en el repartidor.</div>
+        <div class="box"><h4>Segura</h4>Evita prolongadores de cableado, reduce conexiones improvisadas y facilita la comprobación y el mantenimiento.</div>
+      </div>
+      <p class="note">Resumen de prácticas: instalación interior de telefonía con repartidor IDC, conexión de PTRs y rosetas, uso de la herramienta de corte e inserción y reorganización de líneas mediante puentes.</p>
+    </section>
+
     <!-- ================= TEST ================= -->
     <section class="tema" id="test">
       <div class="temahead"><div class="tag">Cuestiones</div>
       <h2>Tests</h2>
-      <p class="lead">Elige un test. Al responder verás si has acertado y por qué. Las opciones se mezclan una vez al cargar la página.</p></div>
+      <p class="lead">Elige un test. Al responder verás si has acertado y por qué. Hay un test por tema y otro complementario. Las opciones se mezclan una vez al cargar la página.</p></div>
       <div class="tabs" id="testtabs" role="group" aria-label="Test"></div>
       <div class="testbar" id="testbar">
         <span class="score" id="score">0 / 10</span>
@@ -458,13 +532,13 @@ links.forEach(function(a){a.addEventListener('click',function(e){
   var t=document.querySelector(a.getAttribute('href'));
   if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
 });});
-var secs=['tema1','tema2','tema3','test'].map(function(id){return document.getElementById(id)});
+var secs=['tema1','tema2','tema3','tema4','test'].map(function(id){return document.getElementById(id)});
 function onScroll(){
   var y=window.scrollY+140,cur=0;
   secs.forEach(function(s,i){if(s.offsetTop<=y)cur=i;});
   var href='#'+secs[cur].id;
   links.forEach(function(a){
-    var on=a.getAttribute('href')===href||(cur===3&&a.getAttribute('href')==='#test');
+    var on=a.getAttribute('href')===href||(cur===4&&a.getAttribute('href')==='#test');
     a.classList.toggle('on',on);
   });
 }
@@ -631,7 +705,19 @@ var sets=[
   o:['Sí: si no es posible usar las canalizaciones del RD, esos tendidos no están legislados. Solo hay que informar al propietario por escrito.','No, es ilegal en cualquier caso.','Sí, pero solo con autorización previa de la compañía telefónica.','Sí, pero únicamente con tubos de 20 mm empotrados.'],
   e:'Es alegal, no ilegal. Puedes usar hilo desnudo con grapas, otras canalizaciones o mezclar tendidos.'}
 ]},
-{id:'t4',name:'Fundamentos (complementario)',note:'Este test no sale de los PDFs de temario: las respuestas son de conocimiento general sobre telefonía analógica.',qs:[
+{id:'t4',name:'Tema 4 · Instalación flexible',qs:[
+ {q:'¿Qué elemento permite reorganizar una instalación telefónica sin volver a tender todos los cables?',o:['El repartidor, que concentra las conexiones de PTRs y rosetas.','La tapa del PTR.','El auricular del teléfono.','Un prolongador conectado a la roseta.'],e:'El repartidor centraliza las entradas y salidas, y sus puentes permiten cambiar la distribución.'},
+ {q:'¿Qué significa que una instalación de telefonía sea flexible?',o:['Que puede ampliarse o cambiarse modificando conexiones en el repartidor, sin recablear toda la instalación.','Que los cables se dejan sueltos en el suelo.','Que todos los teléfonos se conectan siempre en paralelo.','Que no necesita PTR ni rosetas.'],e:'La flexibilidad se consigue llevando los cables a un punto central y reorganizando allí los puentes.'},
+ {q:'¿Qué tres tipos de repartidor aparecen en el tema?',o:['Regletas IDC, regletas de tornillo y wrapping de cableado.','PTR, PCR y PAU.','RJ-11, RJ-14 y RJ-25.','Roseta de superficie, empotrable y Keystone.'],e:'El tema clasifica los repartidores por regletas IDC, regletas de tornillo y wrapping.'},
+ {q:'¿Cuál es el repartidor más utilizado en las aplicaciones del tema?',o:['El repartidor por regletas de corte e inserción (IDC).','El repartidor por coaxial.','El repartidor por fibra óptica.','El repartidor por regletas de audio.'],e:'El IDC destaca por sus características eléctricas y de seguridad.'},
+ {q:'¿Para qué sirven los puentes en el repartidor?',o:['Para unir una línea de entrada con las salidas de las rosetas que deben recibir ese servicio.','Para medir la tensión de llamada.','Para sujetar la tapa del PTR.','Para convertir una línea analógica en fibra.'],e:'Los puentes deciden qué rosetas quedan conectadas a cada PTR o línea.'},
+ {q:'¿Qué herramienta se utiliza para conectar los hilos a una regleta IDC?',o:['La herramienta de corte e inserción.','La crimpadora RJ-11.','Un polímetro en modo amperímetro.','Un destornillador de estrella exclusivamente.'],e:'La herramienta inserta el hilo en la ranura y corta el sobrante.'},
+ {q:'En el ejemplo del tema, ¿qué rosetas comparten la línea del PTR 1?',o:['Las rosetas 1 y 3.','Solo la roseta 2.','Las tres rosetas siempre.','Ninguna: el PTR 1 queda sin conectar.'],e:'El ejemplo conecta las salas 1 y 3 a la línea 1 y reserva la sala 2 para la línea 2.'},
+ {q:'¿Qué cables llegan al repartidor en un sistema de precableado?',o:['Los cables procedentes de los PTR y los cables que salen hacia las rosetas.','Solo los cables de alimentación eléctrica.','Únicamente los latiguillos de los teléfonos.','Solo el cable de la roseta más cercana.'],e:'El repartidor es el punto central donde terminan ambos tipos de cableado.'},
+ {q:'¿Qué ventaja de seguridad ofrece la instalación flexible?',o:['Evita prolongadores y conexiones improvisadas, y facilita la comprobación y el mantenimiento.','Aumenta la tensión de línea para que suenen más teléfonos.','Permite mezclar cables eléctricos y telefónicos sin separación.','Elimina la necesidad de etiquetar los cables.'],e:'Las conexiones quedan ordenadas, cortas, identificables y accesibles en el repartidor.'},
+ {q:'¿Qué debe hacerse después de conectar las regletas y los puentes?',o:['Comprobar la continuidad y etiquetar las líneas, regletas y rosetas.','Cerrar el repartidor sin realizar ninguna prueba.','Cambiar todos los PTR por PCR.','Conectar todas las rosetas al mismo par sin identificarlo.'],e:'La comprobación y el etiquetado evitan errores y facilitan futuras ampliaciones.'}
+]},
+{id:'t5',name:'Fundamentos (complementario)',note:'Este test no sale de los PDFs de temario: las respuestas son de conocimiento general sobre telefonía analógica.',qs:[
  {q:'Para el funcionamiento de un teléfono analógico, ¿qué elementos se necesitan?',
   o:['Micrófono, auricular (altavoz), teclado o dial, timbre y circuito de conexión a la línea de dos hilos alimentada por la central.','Solo un micrófono y un altavoz, sin alimentación.','Una tarjeta SIM y una antena.','Un router y un módem de fibra.'],
   e:'La alimentación y las señales llegan por la propia línea desde la central.'},
